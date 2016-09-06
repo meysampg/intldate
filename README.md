@@ -202,6 +202,7 @@ There are some methods that help to control more on converting process. I just l
 ToDo
 ----
  - Implement `parsePattern($pattern)` method.
+
  ```php
 /**
  * Implement a function to parse both ICU patterns and php date
@@ -210,7 +211,9 @@ ToDo
  * example `php:Y-F-d, H:i:s` is a php pattern.
  */
  ```
+ 
  - Implement `guessDateTime($timestring)` method.
+
  ```php
  /**
   * Implement a function to convert '2016/01/22 11:43:24' to an array
@@ -225,6 +228,7 @@ ToDo
   * ]
   */
  ```
+
  - Write tests!
  
  Contribute
