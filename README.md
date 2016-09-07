@@ -10,7 +10,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```bash
-php require --prefer-dist meysampg/intldate "*"
+composer require --prefer-dist meysampg/intldate "*"
 ```
 
 or add
@@ -21,7 +21,7 @@ or add
 
 to the require section of your `composer.json` file.
 
-Also eaily you can [Download](https://github.com/meysampg/intldate/archive/master.zip) and use it.
+Also easily you can [Download](https://github.com/meysampg/intldate/archive/master.zip) and use it.
 
 Usage
 -----
@@ -31,7 +31,7 @@ Once the library is installed, simply use it in your php file:
 ```php
 use meysampg\intldate\IntlDateTrait;
 ```
-and use it on your desird class:
+and use it on your desired class:
 
 ```php
 <?php
@@ -44,7 +44,7 @@ class Bar
 {
   use IntlDateTrait;
   // Some codes are here!
-  
+ 
   echo $this->fromGregorian([2017, 9, 7, 12, 23, 45])->toPersian('en')->asDateTime();
 }
 ```
@@ -52,7 +52,7 @@ class Bar
 Anathomy
 --------
 
-`IntlDateTrait` has a simple logic for nameing methods: "A date starts from *origin* and ends to *final*. So all methods (setters and getters) that are related to incoming date are named by `setOriginXXXX` and `getOriginXXXX` (which `XXXX` shows a feature of time, like *timezone* or *locale*) and all methods that are corresponded to outgoing date are regarded as `setFinalXXXX` and `getFinalXXXX`. A list of available methods can be find in bottom of this document.
+`IntlDateTrait` has a simple logic for naming methods: "A date starts from *origin* and ends to *final*. So all methods (setters and getters) that are related to incoming date are named by `setOriginXXXX` and `getOriginXXXX` (which `XXXX` shows a feature of time, like *timezone* or *locale*) and all methods that are corresponded to outgoing date are regarded as `setFinalXXXX` and `getFinalXXXX`. A list of available methods can be find in bottom of this document.
 
 Conversion
 ----------
@@ -68,7 +68,7 @@ At first I must note that incoming date must be an array in this form:
     second // 4
 ]
 ```
-Corrently, the library **CAN'T** parse a string as time (See ToDo section), so before converting a date, you **MUST** parse it on a acceptable array (It can be done with `preg_match` or each tools that you know). Now you can easily use
+Currently, the library **CAN'T** parse a string as time (See ToDo section), so before converting a date, you **MUST** parse it on a acceptable array (It can be done with `preg_match` or each tools that you know). Now you can easily use
 `IntlDateTrait::from($datetimeArray, $locale, $calendar)` for importing an incoming date and `IntlDateTrait::to($locale, $calendar)` for converting it to another system. We disccuesed about `$datetimeArray` in the first of this section, it's our date for converting on a accepted format. `$locale` is the regional information of a language. For example for The *English* it's `en`, for *Farsi* it's `fa`, for *Spanish* it's `es` and so on. You can find a complete list of them at [this link](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). And finally calendar is your desired date system. This library use the `Intl*` family of `php` and so you can use all supported calendar in `ICU` project. Now this calendars are supported:
  - persian
  - gregorian
@@ -101,7 +101,7 @@ ShortHands
 ----------
 There are some shorthands for converting dates in a painless way (Yeah! With all of my proud, I'm a **Lazy** man :D). This shorthands are formatted as `fromYyyy()` for incoming date function and `toZzzz()` for outgoing date function such that, `Yyyy` and `Zzzz` are the name of calendars. For incoming function, the signature is `fromYyyy($datetimeArray, $locale = 'en_US')` and for outgoing is `toZzzz($locale = 'fa')`. Use `$locale` in incoming function if you have non-latin digits and use it on outgoing function, if you wanna show the converted date by latin digits (Based on region of calendar, `$locales` are defined, for example the default locate of `Persian` calendar for outgoing function is `fa`). Shorthands are listed in table.
 
-|   Incoming    |   Outgoing    |    
+|   Incoming    |   Outgoing    |
 |---------------|---------------|
 |fromPersian    |   toPersian   |
 |fromJapanese   |toJapanese     |
@@ -116,7 +116,7 @@ There are some shorthands for converting dates in a painless way (Yeah! With all
 
 Showing Date
 ------------
-There are two functions for showing converted dates. The first is `asDateTime` and the last one is `asTimestamp`. 
+There are two functions for showing converted dates. The first is `asDateTime` and the last one is `asTimestamp`.
 
 Signature of `asDateTime` is `asDateTime($pattern = 'yyyy/MM/dd, HH:mm:ss')`. This function accepts an `ICU`-acceptable format. You can find more info from [this link](http://www.icu-project.org/apiref/icu4c/classSimpleDateFormat.html#details). Also it's good idea for implementing a function that parse traditional php `date`-acceptable format (See ToDo section).
 
@@ -211,7 +211,7 @@ ToDo
  * example `php:Y-F-d, H:i:s` is a php pattern.
  */
  ```
- 
+
  - Implement `guessDateTime($timestring)` method.
 
  ```php
