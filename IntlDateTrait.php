@@ -37,10 +37,6 @@ trait IntlDateTrait
 
     public function asTimestamp()
     {
-        $oldPattern = $this->getFinalPattern();
-        $timeValue = strtotime($this->asDateTime());
-        $this->setFinalPattern($oldPattern);
-
         return $this->getIntlCalendar()->toDateTime()->format('U');
     }
 
