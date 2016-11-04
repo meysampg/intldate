@@ -127,6 +127,9 @@ Examples
 There are some examples for using `IntlDateTrait`. I think they are necessary and sufficent.
 
 ```php
+$this->fromTimestamp(1504770825)->toPersian('en')->asDateTime();
+// '1396/06/16, 07:53:45'
+
 $this->fromGregorian([2017, 9, 7, 12, 23, 45])->toPersian('en')->asDateTime();
 // '1396/06/16, 07:53:45'
 

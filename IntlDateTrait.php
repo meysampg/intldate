@@ -40,6 +40,16 @@ trait IntlDateTrait
         return $this->getIntlCalendar()->toDateTime()->format('U');
     }
 
+    public function fromTimestamp($timestamp)
+    {
+        $dateArray = getdate($timestamp);
+        unset($dateArray[0]);
+
+        $this->from($dateArray);
+
+        return $this;
+    }
+
     public function from($datetime = [], $locale = 'en_US', $calendar = null)
     {
         $datetime = $this->parseDateTime($datetime);
