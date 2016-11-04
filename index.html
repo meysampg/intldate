@@ -1,36 +1,25 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Intldate by meysampg</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Intldate</h1>
-        <p class="header">A small php library for date converting between multiple calendar</p>
+    <section class="page-header">
+      <h1 class="project-name">Intldate</h1>
+      <h2 class="project-tagline">A small php library for date converting between multiple calendar</h2>
+      <a href="https://github.com/meysampg/intldate" class="btn">View on GitHub</a>
+      <a href="https://github.com/meysampg/intldate/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/meysampg/intldate/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/meysampg/intldate/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/meysampg/intldate/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/meysampg/intldate">View On GitHub</a></li>
-        </ul>
-
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/meysampg">meysampg</a></p>
-
-
-      </header>
-      <section>
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="intl-date" class="anchor" href="#intl-date" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Intl. Date</h1>
 
 <p>PHP Library for Converting Date to Multiple Calendars</p>
@@ -194,7 +183,10 @@
 
 <p>There are some examples for using <code>IntlDateTrait</code>. I think they are necessary and sufficent.</p>
 
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$this</span><span class="pl-k">-&gt;</span>fromGregorian([<span class="pl-c1">2017</span>, <span class="pl-c1">9</span>, <span class="pl-c1">7</span>, <span class="pl-c1">12</span>, <span class="pl-c1">23</span>, <span class="pl-c1">45</span>])<span class="pl-k">-&gt;</span>toPersian(<span class="pl-s"><span class="pl-pds">'</span>en<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>asDateTime();</span>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$this</span><span class="pl-k">-&gt;</span>fromTimestamp(<span class="pl-c1">1504770825</span>)<span class="pl-k">-&gt;</span>toPersian(<span class="pl-s"><span class="pl-pds">'</span>en<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>asDateTime();</span>
+<span class="pl-s1"><span class="pl-c">// '1396/06/16, 07:53:45'</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$this</span><span class="pl-k">-&gt;</span>fromGregorian([<span class="pl-c1">2017</span>, <span class="pl-c1">9</span>, <span class="pl-c1">7</span>, <span class="pl-c1">12</span>, <span class="pl-c1">23</span>, <span class="pl-c1">45</span>])<span class="pl-k">-&gt;</span>toPersian(<span class="pl-s"><span class="pl-pds">'</span>en<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>asDateTime();</span>
 <span class="pl-s1"><span class="pl-c">// '1396/06/16, 07:53:45'</span></span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-smi">$this</span><span class="pl-k">-&gt;</span>fromGregorian([<span class="pl-c1">2017</span>, <span class="pl-c1">9</span>, <span class="pl-c1">7</span>, <span class="pl-c1">12</span>, <span class="pl-c1">23</span>, <span class="pl-c1">45</span>])<span class="pl-k">-&gt;</span>toPersian()<span class="pl-k">-&gt;</span>asDateTime();</span>
@@ -361,12 +353,15 @@
 <p>Just fork this repository, do your modification or addition and send a pull request!</p>
 </li>
 </ul>
-      </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/meysampg/intldate">Intldate</a> is maintained by <a href="https://github.com/meysampg">meysampg</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+
+    </section>
+
+  
   </body>
 </html>
