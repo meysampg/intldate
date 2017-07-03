@@ -232,7 +232,7 @@ ToDo
   */
  ```
 
- - Write tests!
+ - ~~Write tests!~~
  
  Contribute
  ----------
