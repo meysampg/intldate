@@ -1,0 +1,8 @@
+title: Intldate
+description: A small php library for date converting between multiple calendar
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
