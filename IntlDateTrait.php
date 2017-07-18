@@ -569,7 +569,7 @@ trait IntlDateTrait
         $calendar = IntlDateFormatter::GREGORIAN,
         $pattern = 'yyyy/MM/dd HH:mm:ss'
     ) {
-        $this->intlDateFormatter = new IntlDateFormatter(
+        $this->_intlDateFormatter = new IntlDateFormatter(
             $locale, // string $locale
             $datetype, // int $datetype
             $timetype, // int $timetype
@@ -583,7 +583,7 @@ trait IntlDateTrait
 
     public function getIntlDateFormatter()
     {
-        return $this->intlDateFormatter;
+        return $this->_intlDateFormatter;
     }
 
     public function setIntlCalendar(
@@ -591,7 +591,7 @@ trait IntlDateTrait
         $locale = 'en_US@calendar=gregorian'
     ) {
 
-        $this->intlCalendar = IntlCalendar::createInstance(
+        $this->_intlCalendar = IntlCalendar::createInstance(
             $timezone,
             $locale
         );
@@ -601,6 +601,6 @@ trait IntlDateTrait
 
     public function getIntlCalendar()
     {
-        return $this->intlCalendar;
+        return $this->_intlCalendar;
     }
 }
