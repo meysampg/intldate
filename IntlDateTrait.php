@@ -579,6 +579,9 @@ trait IntlDateTrait
             case "12":
                 $month = 11;
                 break;
+            default:
+                return -1;
+                break;
         }
         
         return [$year, $month, $day, $hour, $minute, $second];
