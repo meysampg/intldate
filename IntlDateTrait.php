@@ -527,6 +527,7 @@ trait IntlDateTrait
          *      4 => 43, // Minute
          *      5 => 24, // Seconds
          *]
+     * Returns False if invalid month, day, hour, minute, or second is given.
      */
     public function guessDateTime($timestring)
     {
