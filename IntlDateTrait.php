@@ -543,13 +543,13 @@ trait IntlDateTrait
         $second = (int) $time[2];
 
         if ($day > 31 || $day < 1) {
-            return -1;
+            return false;
         } elseif ($hour > 24 || $hour < 0) {
-            return -1;
+            return false;
         } elseif ($minute > 60 || $minute < 0) {
-            return -1;
+            return false;
         } elseif ($second > 60 || $second < 0) {
-            return -1;
+            return false;
         }
 
         switch ($month) {
@@ -590,7 +590,7 @@ trait IntlDateTrait
                 $month = 11;
                 break;
             default:
-                return -1;
+                return false;
                 break;
         }
         
