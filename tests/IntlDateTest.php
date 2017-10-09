@@ -157,11 +157,11 @@ class IntlDateTest extends \PHPUnit\Framework\TestCase
 
         $given = "2016/00/22 11:43:24";
         $result = $intldate->guessDateTime($given);
-        $this->assertEquals(-1, $result);
+        $this->assertFalse($result);
 
         $given = "2016/14/22 11:43:24";
         $result = $intldate->guessDateTime($given);
-        $this->assertEquals(-1, $result);
+        $this->assertFalse($result);
     }
 
     public function testItShoudReturnMinusOneWhenInvalidDayIsGiven()
@@ -170,11 +170,11 @@ class IntlDateTest extends \PHPUnit\Framework\TestCase
 
         $given = "2016/01/0 11:43:24";
         $result = $intldate->guessDateTime($given);
-        $this->assertEquals(-1, $result);
+        $this->assertFalse($result);
 
         $given = "2016/04/33 11:43:24";
         $result = $intldate->guessDateTime($given);
-        $this->assertEquals(-1, $result);
+        $this->assertFalse($result);
     }
 
     public function testItShoudReturnMinusOneWhenInvalidHourIsGiven()
@@ -183,11 +183,11 @@ class IntlDateTest extends \PHPUnit\Framework\TestCase
 
         $given = "2016/01/1 -1:43:24";
         $result = $intldate->guessDateTime($given);
-        $this->assertEquals(-1, $result);
+        $this->assertFalse($result);
 
         $given = "2016/04/12 25:43:24";
         $result = $intldate->guessDateTime($given);
-        $this->assertEquals(-1, $result);
+        $this->assertFalse($result);
     }
 
     public function testItShoudReturnMinusOneWhenInvalidMinuteIsGiven()
@@ -196,11 +196,11 @@ class IntlDateTest extends \PHPUnit\Framework\TestCase
 
         $given = "2016/01/1 2:-1:24";
         $result = $intldate->guessDateTime($given);
-        $this->assertEquals(-1, $result);
+        $this->assertFalse($result);
 
         $given = "2016/04/12 12:61:24";
         $result = $intldate->guessDateTime($given);
-        $this->assertEquals(-1, $result);
+        $this->assertFalse($result);
     }
 
     public function testItShoudReturnMinusOneWhenInvalidSecondIsGiven()
@@ -209,11 +209,11 @@ class IntlDateTest extends \PHPUnit\Framework\TestCase
 
         $given = "2016/01/1 12:43:-2";
         $result = $intldate->guessDateTime($given);
-        $this->assertEquals(-1, $result);
+        $this->assertFalse($result);
 
         $given = "2016/04/12 15:43:62";
         $result = $intldate->guessDateTime($given);
-        $this->assertEquals(-1, $result);
+        $this->assertFalse($result);
     }
 
     protected function setUp()
