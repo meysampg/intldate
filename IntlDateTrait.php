@@ -530,7 +530,58 @@ trait IntlDateTrait
      */
     public function guessDateTime($timestring)
     {
-        //Implementing.
+        $date_time = explode(" ", $timestring);
+
+        $date = explode("/", $date_time[0]);
+        $time = explode(":", $date_time[1]);
+
+        $year = (int) $date[0];
+        $month = $date[1];
+        $day = (int) $date[2];
+        $hour = (int) $time[0];
+        $minute = (int) $time[1];
+        $second = (int) $time[2];
+
+        switch ($month) {
+            case "01":
+                $month = 0;
+                break;
+            case "02":
+                $month = 1;
+                break;
+            case "03":
+                $month = 2;
+                break;
+            case "04":
+                $month = 3;
+                break;
+            case "05":
+                $month = 4;
+                break;
+            case "06":
+                $month = 5;
+                break;
+            case "07":
+                $month = 6;
+                break;
+            case "08":
+                $month = 7;
+                break;
+            case "09":
+                $month = 8;
+                break;
+            case "10":
+                $month = 9;
+                break;
+            case "11":
+                $month = 10;
+                break;
+            case "12":
+                $month = 11;
+                break;
+        }
+        
+        return [$year, $month, $day, $hour, $minute, $second];
     }
 
     /**
