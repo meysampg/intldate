@@ -151,6 +151,19 @@ class IntlDateTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $result);
     }
 
+    public function testItShoudReturnMinusOneWhenInvalidMonthIsGiven()
+    {
+        $intldate = $this->intldate;
+
+        $given = "2016/00/22 11:43:24";
+        $result = $intldate->guessDateTime($given);
+        $this->assertEquals(-1, $result);
+
+        $given = "2016/14/22 11:43:24";
+        $result = $intldate->guessDateTime($given);
+        $this->assertEquals(-1, $result);
+    }
+
     protected function setUp()
     {
         parent::setUp();
