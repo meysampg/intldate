@@ -542,6 +542,16 @@ trait IntlDateTrait
         $minute = (int) $time[1];
         $second = (int) $time[2];
 
+        if ($day > 31 || $day < 1) {
+            return -1;
+        } elseif ($hour > 24 || $hour < 0) {
+            return -1;
+        } elseif ($minute > 60 || $minute < 0) {
+            return -1;
+        } elseif ($second > 60 || $second < 0) {
+            return -1;
+        }
+
         switch ($month) {
             case "01":
                 $month = 0;
