@@ -122,6 +122,24 @@ class IntlDateTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testItShouldGetADatetimeStringAndSplitItIntoAnArrayOfThatDatetimeString()
+    {
+        $intldate = $this->intldate;
+
+        $given = "2016/01/22 11:43:24";
+        $expected = [
+            0 => 2016,
+            1 => 0,
+            2 => 22,
+            3 => 11,
+            4 => 43,
+            5 => 24,
+        ];
+        $result = $intldate->guessDateTime($given);
+
+        $this->assertEquals($expected, $result);
+    }
+
     protected function setUp()
     {
         parent::setUp();
