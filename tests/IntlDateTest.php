@@ -164,6 +164,58 @@ class IntlDateTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(-1, $result);
     }
 
+    public function testItShoudReturnMinusOneWhenInvalidDayIsGiven()
+    {
+        $intldate = $this->intldate;
+
+        $given = "2016/01/0 11:43:24";
+        $result = $intldate->guessDateTime($given);
+        $this->assertEquals(-1, $result);
+
+        $given = "2016/04/33 11:43:24";
+        $result = $intldate->guessDateTime($given);
+        $this->assertEquals(-1, $result);
+    }
+
+    public function testItShoudReturnMinusOneWhenInvalidHourIsGiven()
+    {
+        $intldate = $this->intldate;
+
+        $given = "2016/01/1 -1:43:24";
+        $result = $intldate->guessDateTime($given);
+        $this->assertEquals(-1, $result);
+
+        $given = "2016/04/12 25:43:24";
+        $result = $intldate->guessDateTime($given);
+        $this->assertEquals(-1, $result);
+    }
+
+    public function testItShoudReturnMinusOneWhenInvalidMinuteIsGiven()
+    {
+        $intldate = $this->intldate;
+
+        $given = "2016/01/1 2:-1:24";
+        $result = $intldate->guessDateTime($given);
+        $this->assertEquals(-1, $result);
+
+        $given = "2016/04/12 12:61:24";
+        $result = $intldate->guessDateTime($given);
+        $this->assertEquals(-1, $result);
+    }
+
+    public function testItShoudReturnMinusOneWhenInvalidSecondIsGiven()
+    {
+        $intldate = $this->intldate;
+
+        $given = "2016/01/1 12:43:-2";
+        $result = $intldate->guessDateTime($given);
+        $this->assertEquals(-1, $result);
+
+        $given = "2016/04/12 15:43:62";
+        $result = $intldate->guessDateTime($given);
+        $this->assertEquals(-1, $result);
+    }
+
     protected function setUp()
     {
         parent::setUp();
