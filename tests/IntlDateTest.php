@@ -136,7 +136,18 @@ class IntlDateTest extends \PHPUnit\Framework\TestCase
             5 => 24,
         ];
         $result = $intldate->guessDateTime($given);
+        $this->assertEquals($expected, $result);
 
+        $given = "2017/04/23 13:42:11";
+        $expected = [
+            0 => 2017,
+            1 => 3,
+            2 => 23,
+            3 => 13,
+            4 => 42,
+            5 => 11,
+        ];
+        $result = $intldate->guessDateTime($given);
         $this->assertEquals($expected, $result);
     }
 
