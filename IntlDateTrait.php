@@ -514,21 +514,23 @@ trait IntlDateTrait
         return $pattern;
     }
 
-    // [TODO]
-    public function guessDateTime($timestring)
-    {
-        /**
-         * Implement a function to convert '2016/01/22 11:43:24' to an array
-         * like
-         * [
+    /**
+     * This method gets a datetime string as the input and converts it
+     * into a standard array.
+     * Example: '2016/01/22 11:43:24'
+     * to an array like:
+        [
          *      0 => 2016, // Year
          *      1 => 0, // Month. IntlCalendar use 0 for first month and so on.
          *      2 => 22, // Day
          *      3 => 11, // Hour
          *      4 => 43, // Minute
          *      5 => 24, // Seconds
-         * ]
-         */
+         *]
+     */
+    public function guessDateTime($timestring)
+    {
+        //Implementing.
     }
 
     /**
