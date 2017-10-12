@@ -514,21 +514,88 @@ trait IntlDateTrait
         return $pattern;
     }
 
-    // [TODO]
-    public function guessDateTime($timestring)
-    {
-        /**
-         * Implement a function to convert '2016/01/22 11:43:24' to an array
-         * like
-         * [
+    /**
+     * This method gets a datetime string as the input and converts it
+     * into a standard array.
+     * Example: '2016/01/22 11:43:24'
+     * to an array like:
+        [
          *      0 => 2016, // Year
          *      1 => 0, // Month. IntlCalendar use 0 for first month and so on.
          *      2 => 22, // Day
          *      3 => 11, // Hour
          *      4 => 43, // Minute
          *      5 => 24, // Seconds
-         * ]
-         */
+         *]
+     * Returns False if invalid month, day, hour, minute, or second is given.
+     */
+    public function guessDateTime($timestring)
+    {
+        $date_time = explode(" ", $timestring);
+
+        $date = explode("/", $date_time[0]);
+        $time = explode(":", $date_time[1]);
+
+        $year = (int) $date[0];
+        $month = $date[1];
+        $day = (int) $date[2];
+        $hour = (int) $time[0];
+        $minute = (int) $time[1];
+        $second = (int) $time[2];
+
+        if ($day > 31 || $day < 1) {
+            return false;
+        } elseif ($hour > 24 || $hour < 0) {
+            return false;
+        } elseif ($minute > 60 || $minute < 0) {
+            return false;
+        } elseif ($second > 60 || $second < 0) {
+            return false;
+        }
+
+        switch ($month) {
+            case "01":
+                $month = 0;
+                break;
+            case "02":
+                $month = 1;
+                break;
+            case "03":
+                $month = 2;
+                break;
+            case "04":
+                $month = 3;
+                break;
+            case "05":
+                $month = 4;
+                break;
+            case "06":
+                $month = 5;
+                break;
+            case "07":
+                $month = 6;
+                break;
+            case "08":
+                $month = 7;
+                break;
+            case "09":
+                $month = 8;
+                break;
+            case "10":
+                $month = 9;
+                break;
+            case "11":
+                $month = 10;
+                break;
+            case "12":
+                $month = 11;
+                break;
+            default:
+                return false;
+                break;
+        }
+        
+        return [$year, $month, $day, $hour, $minute, $second];
     }
 
     /**
