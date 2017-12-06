@@ -608,7 +608,8 @@ trait IntlDateTrait
      * missing pieces of information, a corresponded part from 1970/1/Jan., 00:00:00
      * will be replaced.
      *
-     * @return An `IntlDateFormatter` compitiable array.
+     * @return array An `IntlDateFormatter` compatible array.
+     * @throws Exception
      */
     private function parseDateTime($datetimeArray)
     {
