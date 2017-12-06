@@ -615,7 +615,7 @@ trait IntlDateTrait
         $finalDatetimeArray = [];
 
         if (!is_array($datetimeArray)) {
-            throw new Exception("DateTime information must be an array.");
+            throw new Exception("DateTime information must be an array in [year, month, day, hours, minutes, seconds] format.");
         }
 
         $finalDatetimeArray[0] = isset($datetimeArray[0]) ? (int)$datetimeArray[0] : (isset($datetimeArray['year']) ? (int)$datetimeArray['year'] : 1970);
