@@ -16,5 +16,6 @@ before_script:
 
 script:
   - phpunit
-  - "phpunit --coverage-text --coverage-clover build/logs/clover.xml"
+  - "phpunit --coverage-text --coverage-clover --coverage-xml"
+  - mv tests/_output/coverage.xml clover.xml 
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build -t "clover" --exit-code $TRAVIS_TEST_RESULT; fi
