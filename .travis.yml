@@ -1,8 +1,20 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=40141fbf49a6c6d471733121626ae3f4cdfd7eda064141a1c01cdd2816504541
+
 language: php
 
 php:
   - 7.0
 
+before_script:
+  - "composer require codeclimate/php-test-reporter --dev"
+  - "composer install"
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
-  - composer install
   - phpunit
+  - "phpunit --coverage-text --coverage-clover build/logs/clover.xml"
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build -t "clover" --exit-code $TRAVIS_TEST_RESULT; fi
