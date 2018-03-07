@@ -1,5 +1,7 @@
 Intl. Date
 ==========
+[![StyleCI](https://styleci.io/repos/67480531/shield?branch=master)](https://styleci.io/repos/67480531)
+
 PHP Library for Converting Date to Multiple Calendars
 
 Installation
