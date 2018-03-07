@@ -1,6 +1,6 @@
 Intl. Date
 ==========
-[![StyleCI](https://styleci.io/repos/67480531/shield?branch=master)](https://styleci.io/repos/67480531)
+[![StyleCI](https://styleci.io/repos/67480531/shield?branch=master)](https://styleci.io/repos/67480531) [![Build Status](https://travis-ci.org/meysampg/intldate.svg?branch=master)](https://travis-ci.org/meysampg/intldate)
 
 PHP Library for Converting Date to Multiple Calendars
 
