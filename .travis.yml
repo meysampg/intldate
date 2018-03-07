@@ -19,5 +19,5 @@ install:
 script:
   - phpunit --coverage-clover clover.xml
 
-script:
+after_script:
   - if [ $(phpenv version-name) = "7.0" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
