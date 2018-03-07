@@ -1,6 +1,6 @@
 Intl. Date
 ==========
-[![StyleCI](https://styleci.io/repos/67480531/shield?branch=master)](https://styleci.io/repos/67480531) [![Build Status](https://travis-ci.org/meysampg/intldate.svg?branch=master)](https://travis-ci.org/meysampg/intldate)
+[![StyleCI](https://styleci.io/repos/67480531/shield?branch=master)](https://styleci.io/repos/67480531) [![Build Status](https://travis-ci.org/meysampg/intldate.svg?branch=master)](https://travis-ci.org/meysampg/intldate) [![Total Downloads](https://poser.pugx.org/meysampg/intldate/downloads)](https://packagist.org/packages/meysampg/intldate) [![Latest Stable Version](https://poser.pugx.org/meysampg/intldate/v/stable)](https://packagist.org/packages/meysampg/intldate) [![Maintainability](https://api.codeclimate.com/v1/badges/a8958ec9f4ffc059b6fb/maintainability)](https://codeclimate.com/github/meysampg/intldate/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a8958ec9f4ffc059b6fb/test_coverage)](https://codeclimate.com/github/meysampg/intldate/test_coverage)
 
 PHP Library for Converting Date to Multiple Calendars
 
