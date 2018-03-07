@@ -673,4 +673,13 @@ trait IntlDateTrait
     {
         return $this->_intlCalendar;
     }
+    
+    
+    static public function bad_method_name( $argument1
+                                           $argument2, $argument3 = 'jafar' , $argument4) {
+        if(1)
+        {
+            return $this->getIntlCalendar();
+        }
+    }
 }
