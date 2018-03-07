@@ -1,21 +1,23 @@
 <?php
 
 /**
- * IntlDate is a trait for easy conversion date and time between multiple calendars
+ * IntlDate is a trait for easy conversion date and time between multiple calendars.
  *
  * @category Traits
- * @package  Intldate
+ *
  * @author   meysampg <p.g.meysam@gmail.com>
  * @license  https://github.com/meysampg/intldate/blob/master/LICENSE MIT
+ *
  * @version  1.1
+ *
  * @link     https://github.com/meysampg/intldate
  */
 
 namespace meysampg\intldate;
 
-use IntlDateFormatter;
 use Exception;
 use IntlCalendar;
+use IntlDateFormatter;
 
 trait IntlDateTrait
 {
@@ -27,19 +29,19 @@ trait IntlDateTrait
     private $_intlDateFormatter;
     private $_intlCalendar;
 
-    static $CAL_PERSIAN = 'persian';
-    static $CAL_JAPANESE = 'japanese';
-    static $CAL_BUDDHIST = 'buddhist';
-    static $CAL_CHINESE = 'chinese';
-    static $CAL_INDIAN = 'indian';
-    static $CAL_ISLAMIC = 'islamic';
-    static $CAL_HEBREW = 'hebrew';
-    static $CAL_COPTIC = 'coptic';
-    static $CAL_ETHIOPIC = 'ethiopic';
-    static $CAL_GREGORIAN = '';
+    public static $CAL_PERSIAN = 'persian';
+    public static $CAL_JAPANESE = 'japanese';
+    public static $CAL_BUDDHIST = 'buddhist';
+    public static $CAL_CHINESE = 'chinese';
+    public static $CAL_INDIAN = 'indian';
+    public static $CAL_ISLAMIC = 'islamic';
+    public static $CAL_HEBREW = 'hebrew';
+    public static $CAL_COPTIC = 'coptic';
+    public static $CAL_ETHIOPIC = 'ethiopic';
+    public static $CAL_GREGORIAN = '';
 
     /**
-     * Return final date and time on supplied format
+     * Return final date and time on supplied format.
      *
      * @param string $pattern pattern of datetime based on ICU standards
      *
@@ -55,9 +57,9 @@ trait IntlDateTrait
     }
 
     /**
-     * Return final time as a timestamp
+     * Return final time as a timestamp.
      *
-     * @return integer
+     * @return int
      *
      * @since 1.0.0
      */
@@ -67,9 +69,9 @@ trait IntlDateTrait
     }
 
     /**
-     * Get datetime as a timestamp
+     * Get datetime as a timestamp.
      *
-     * @param integer $timestamp timestamp on origin
+     * @param int $timestamp timestamp on origin
      *
      * @return static
      *
@@ -80,7 +82,7 @@ trait IntlDateTrait
         // [TODO] use DateTime object for parse timestamp
         $oldTz = date_default_timezone_get();
         date_default_timezone_set($timezone);
-        $timestamp = mktime(date("H", $timestamp), date("i", $timestamp), date("s", $timestamp), date("n", $timestamp), date("j", $timestamp), date("Y", $timestamp));
+        $timestamp = mktime(date('H', $timestamp), date('i', $timestamp), date('s', $timestamp), date('n', $timestamp), date('j', $timestamp), date('Y', $timestamp));
         date_default_timezone_set('UTC');
         $utcDT = gmdate('c', $timestamp);
         $dateArray = getdate(strtotime(gmdate('c', $timestamp)));
@@ -93,12 +95,12 @@ trait IntlDateTrait
     }
 
     /**
-     * Get information of datetime on origin
+     * Get information of datetime on origin.
      *
      * @param array  $datetime Array contains datetime information. Its elements
-     * are [year, month, day, hour, minute, second].
+     *                         are [year, month, day, hour, minute, second].
      * @param string $locale   locale for showing datetime on it (e.g. `en_US` or
-     * `fa_IR`, 'es_US', ...)
+     *                         `fa_IR`, 'es_US', ...)
      * @param string $calendar Calendar on origin
      * @param string $timezone Timezone on origin
      *
@@ -125,7 +127,7 @@ trait IntlDateTrait
     }
 
     /**
-     * Convert datetime to a desired calendar
+     * Convert datetime to a desired calendar.
      *
      * @param string $locale   locale for showing new datetime
      * @param mixed  $calendar calendar system for showing new datetime
@@ -320,7 +322,7 @@ trait IntlDateTrait
 
     public function setFromCalendar($calendar)
     {
-        $this->_fromCalendar = '@calendar=' . trim($calendar);
+        $this->_fromCalendar = '@calendar='.trim($calendar);
 
         return $this;
     }
@@ -344,7 +346,7 @@ trait IntlDateTrait
 
     public function setToCalendar($calendar)
     {
-        $this->_toCalendar = '@calendar=' . trim($calendar);
+        $this->_toCalendar = '@calendar='.trim($calendar);
 
         return $this;
     }
@@ -356,12 +358,12 @@ trait IntlDateTrait
 
     public function getFromLocaleAndCalendar()
     {
-        return $this->getFromLocale() . $this->getFromCalendar();
+        return $this->getFromLocale().$this->getFromCalendar();
     }
 
     public function getToLocaleAndCalendar()
     {
-        return $this->getToLocale() . $this->getToCalendar();
+        return $this->getToLocale().$this->getToCalendar();
     }
 
     public function setOriginTimeZone($timezone)
@@ -505,7 +507,7 @@ trait IntlDateTrait
     // [TODO]
     public function parsePattern($pattern)
     {
-        /**
+        /*
          * Implement a function to parse both ICU patterns and php date
          * function patterns and return a pattern that is compatible on
          * ICU format. The php pattern must start with php keyword, for
@@ -519,22 +521,22 @@ trait IntlDateTrait
      * into a standard array.
      * Example: '2016/01/22 11:43:24'
      * to an array like:
-        [
-         *      0 => 2016, // Year
-         *      1 => 0, // Month. IntlCalendar use 0 for first month and so on.
-         *      2 => 22, // Day
-         *      3 => 11, // Hour
-         *      4 => 43, // Minute
-         *      5 => 24, // Seconds
-         *]
+     * [
+     *      0 => 2016, // Year
+     *      1 => 0, // Month. IntlCalendar use 0 for first month and so on.
+     *      2 => 22, // Day
+     *      3 => 11, // Hour
+     *      4 => 43, // Minute
+     *      5 => 24, // Seconds
+     *]
      * Returns False if invalid month, day, hour, minute, or second is given.
      */
     public function guessDateTime($timestring)
     {
-        $date_time = explode(" ", $timestring);
+        $date_time = explode(' ', $timestring);
 
-        $date = explode("/", $date_time[0]);
-        $time = explode(":", $date_time[1]);
+        $date = explode('/', $date_time[0]);
+        $time = explode(':', $date_time[1]);
 
         $year = (int) $date[0];
         $month = $date[1];
@@ -554,47 +556,47 @@ trait IntlDateTrait
         }
 
         switch ($month) {
-            case "01":
+            case '01':
                 $month = 0;
                 break;
-            case "02":
+            case '02':
                 $month = 1;
                 break;
-            case "03":
+            case '03':
                 $month = 2;
                 break;
-            case "04":
+            case '04':
                 $month = 3;
                 break;
-            case "05":
+            case '05':
                 $month = 4;
                 break;
-            case "06":
+            case '06':
                 $month = 5;
                 break;
-            case "07":
+            case '07':
                 $month = 6;
                 break;
-            case "08":
+            case '08':
                 $month = 7;
                 break;
-            case "09":
+            case '09':
                 $month = 8;
                 break;
-            case "10":
+            case '10':
                 $month = 9;
                 break;
-            case "11":
+            case '11':
                 $month = 10;
                 break;
-            case "12":
+            case '12':
                 $month = 11;
                 break;
             default:
                 return false;
                 break;
         }
-        
+
         return [$year, $month, $day, $hour, $minute, $second];
     }
 
@@ -602,35 +604,36 @@ trait IntlDateTrait
      * Parse DateTime information array to be in correct format.
      *
      * @param array $datetimeArray array contains information of DateTime in
-     * `year, month, day, hour, minute, day` order. This parameter can be a
-     * either associative or non-associative array. For the former, keys must
-     * be compitiable with http://php.net/manual/en/function.getdate.php. For
-     * missing pieces of information, a corresponded part from 1970/1/Jan., 00:00:00
-     * will be replaced.
+     *                             `year, month, day, hour, minute, day` order. This parameter can be a
+     *                             either associative or non-associative array. For the former, keys must
+     *                             be compitiable with http://php.net/manual/en/function.getdate.php. For
+     *                             missing pieces of information, a corresponded part from 1970/1/Jan., 00:00:00
+     *                             will be replaced.
+     *
+     * @throws Exception
      *
      * @return array An `IntlDateFormatter` compatible array.
-     * @throws Exception
      */
     private function parseDateTime($datetimeArray)
     {
         $finalDatetimeArray = [];
 
         if (!is_array($datetimeArray)) {
-            throw new Exception("DateTime information must be an array in [year, month, day, hours, minutes, seconds] format.");
+            throw new Exception('DateTime information must be an array in [year, month, day, hours, minutes, seconds] format.');
         }
 
-        $finalDatetimeArray[0] = isset($datetimeArray[0]) ? (int)$datetimeArray[0] : (isset($datetimeArray['year']) ? (int)$datetimeArray['year'] : 1970);
-        $finalDatetimeArray[1] = isset($datetimeArray[1]) ? (int)$datetimeArray[1] - 1 : (isset($datetimeArray['mon']) ? (int)$datetimeArray['mon'] - 1 : 0);
-        $finalDatetimeArray[2] = isset($datetimeArray[2]) ? (int)$datetimeArray[2] : (isset($datetimeArray['mday']) ? (int)$datetimeArray['mday'] : 1);
-        $finalDatetimeArray[3] = isset($datetimeArray[3]) ? (int)$datetimeArray[3] : (isset($datetimeArray['hours']) ? (int)$datetimeArray['hours'] : 0);
-        $finalDatetimeArray[4] = isset($datetimeArray[4]) ? (int)$datetimeArray[4] : (isset($datetimeArray['minutes']) ? (int)$datetimeArray['minutes'] : 0);
-        $finalDatetimeArray[5] = isset($datetimeArray[5]) ? (int)$datetimeArray[5] : (isset($datetimeArray['seconds']) ? (int)$datetimeArray['seconds'] : 0);
+        $finalDatetimeArray[0] = isset($datetimeArray[0]) ? (int) $datetimeArray[0] : (isset($datetimeArray['year']) ? (int) $datetimeArray['year'] : 1970);
+        $finalDatetimeArray[1] = isset($datetimeArray[1]) ? (int) $datetimeArray[1] - 1 : (isset($datetimeArray['mon']) ? (int) $datetimeArray['mon'] - 1 : 0);
+        $finalDatetimeArray[2] = isset($datetimeArray[2]) ? (int) $datetimeArray[2] : (isset($datetimeArray['mday']) ? (int) $datetimeArray['mday'] : 1);
+        $finalDatetimeArray[3] = isset($datetimeArray[3]) ? (int) $datetimeArray[3] : (isset($datetimeArray['hours']) ? (int) $datetimeArray['hours'] : 0);
+        $finalDatetimeArray[4] = isset($datetimeArray[4]) ? (int) $datetimeArray[4] : (isset($datetimeArray['minutes']) ? (int) $datetimeArray['minutes'] : 0);
+        $finalDatetimeArray[5] = isset($datetimeArray[5]) ? (int) $datetimeArray[5] : (isset($datetimeArray['seconds']) ? (int) $datetimeArray['seconds'] : 0);
 
         return $finalDatetimeArray;
     }
 
     public function setIntlDateFormatter(
-        $locale = "en_US",
+        $locale = 'en_US',
         $datetype = IntlDateFormatter::FULL,
         $timetype = IntlDateFormatter::FULL,
         $timezone = 'UTC',
@@ -658,7 +661,6 @@ trait IntlDateTrait
         $timezone = 'UTC',
         $locale = 'en_US@calendar=gregorian'
     ) {
-
         $this->_intlCalendar = IntlCalendar::createInstance(
             $timezone,
             $locale
