@@ -7,7 +7,6 @@
  *
  * @author   meysampg <p.g.meysam@gmail.com>
  * @author   mahdyar <hi@mahdyar.me>
- * 
  * @license  https://github.com/mahdyar/intldate/blob/master/LICENSE MIT
  *
  * @version  1.1
