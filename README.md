@@ -1,6 +1,6 @@
 Intl. Date
 ==========
-🟥⚠️ _THIS PACKAGE IS ABANDONED. PLEASE SELECT ANOTHER PACKAGE OR FORK THIS REPOSITORY AND INFORM ME ON p.g.meysam [at] Gmail [dot] com TO REFER TO YOUR PACKAGE IN PACKAGIST_ ⚠️🟥
+🟥⚠️ _THIS PACKAGE IS ABANDONED. PLEASE USE https://github.com/mahdyar/intldate OR FORK THIS REPOSITORY AND MAINTENANCE IT FOR YOURSELF_ ⚠️🟥
 
 [![StyleCI](https://styleci.io/repos/67480531/shield?branch=master)](https://styleci.io/repos/67480531) [![Build Status](https://travis-ci.org/meysampg/intldate.svg?branch=master)](https://travis-ci.org/meysampg/intldate) [![Total Downloads](https://poser.pugx.org/meysampg/intldate/downloads)](https://packagist.org/packages/meysampg/intldate) [![Latest Stable Version](https://poser.pugx.org/meysampg/intldate/v/stable)](https://packagist.org/packages/meysampg/intldate) [![Maintainability](https://api.codeclimate.com/v1/badges/a8958ec9f4ffc059b6fb/maintainability)](https://codeclimate.com/github/meysampg/intldate/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a8958ec9f4ffc059b6fb/test_coverage)](https://codeclimate.com/github/meysampg/intldate/test_coverage)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmeysampg%2Fintldate.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmeysampg%2Fintldate?ref=badge_shield)
