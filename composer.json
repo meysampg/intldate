@@ -1,5 +1,5 @@
 {
-    "name": "meysampg/intldate",
+    "name": "mahdyar/intldate",
     "description": "A small php library for date converting between multiple calendar",
     "type": "library",
     "keywords": ["date","extension","jalali","intl","buddhist","chinese","coptic","ethiopic","gregorian","hebrew","indian","islamic","islamic-civil","japanese","persian","taiwan"],
@@ -8,6 +8,10 @@
         {
             "name": "Meysam P.G.",
             "email": "p.g.meysam@gmail.com"
+        },
+        {
+            "name": "Mahdyar Hasanpour",
+            "email": "hi@mahdyar.me"
         }
     ],
     "require": {
@@ -15,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "meysampg\\intldate\\": ""
+            "mahdyar\\intldate\\": ""
         }
     }
 }

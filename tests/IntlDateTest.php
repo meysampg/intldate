@@ -220,7 +220,7 @@ class IntlDateTest extends \PHPUnit\Framework\TestCase
     {
         parent::setUp();
 
-        $this->intldate = $this->getMockForTrait('meysampg\intldate\IntlDateTrait');
+        $this->intldate = $this->getMockForTrait('mahdyar\intldate\IntlDateTrait');
     }
 
     protected function tearDown()

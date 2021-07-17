@@ -1,7 +1,7 @@
 Intl. Date
 ==========
-[![StyleCI](https://styleci.io/repos/67480531/shield?branch=master)](https://styleci.io/repos/67480531) [![Build Status](https://travis-ci.org/meysampg/intldate.svg?branch=master)](https://travis-ci.org/meysampg/intldate) [![Total Downloads](https://poser.pugx.org/meysampg/intldate/downloads)](https://packagist.org/packages/meysampg/intldate) [![Latest Stable Version](https://poser.pugx.org/meysampg/intldate/v/stable)](https://packagist.org/packages/meysampg/intldate) [![Maintainability](https://api.codeclimate.com/v1/badges/a8958ec9f4ffc059b6fb/maintainability)](https://codeclimate.com/github/meysampg/intldate/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a8958ec9f4ffc059b6fb/test_coverage)](https://codeclimate.com/github/meysampg/intldate/test_coverage)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmeysampg%2Fintldate.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmeysampg%2Fintldate?ref=badge_shield)
+[![StyleCI](https://styleci.io/repos/67480531/shield?branch=master)](https://styleci.io/repos/67480531) [![Build Status](https://travis-ci.org/mahdyar/intldate.svg?branch=master)](https://travis-ci.org/mahdyar/intldate) [![Total Downloads](https://poser.pugx.org/mahdyar/intldate/downloads)](https://packagist.org/packages/mahdyar/intldate) [![Latest Stable Version](https://poser.pugx.org/mahdyar/intldate/v/stable)](https://packagist.org/packages/mahdyar/intldate) [![Maintainability](https://api.codeclimate.com/v1/badges/a8958ec9f4ffc059b6fb/maintainability)](https://codeclimate.com/github/mahdyar/intldate/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a8958ec9f4ffc059b6fb/test_coverage)](https://codeclimate.com/github/mahdyar/intldate/test_coverage)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%mahdyar%2Fintldate.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%mahdyar%2Fintldate?ref=badge_shield)
 
 PHP Library for Converting Date to Multiple Calendars
 
@@ -13,18 +13,18 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```bash
-composer require --prefer-dist meysampg/intldate "*"
+composer require --prefer-dist mahdyar/intldate "*"
 ```
 
 or add
 
 ```json
-"meysampg/intldate": "*"
+"mahdyar/intldate": "*"
 ```
 
 to the require section of your `composer.json` file.
 
-Also easily you can [Download](https://github.com/meysampg/intldate/archive/master.zip) and use it.
+Also easily you can [Download](https://github.com/mahdyar/intldate/archive/master.zip) and use it.
 
 Usage
 -----
@@ -32,7 +32,7 @@ Usage
 Once the library is installed, simply use it in your php file:
 
 ```php
-use meysampg\intldate\IntlDateTrait;
+use mahdyar\intldate\IntlDateTrait;
 ```
 and use it on your desired class:
 
@@ -41,7 +41,7 @@ and use it on your desired class:
 
 namespace foo\bar;
 
-use meysampg\intldate\IntlDateTrait;
+use mahdyar\intldate\IntlDateTrait;
 
 class Bar
 {
@@ -228,4 +228,4 @@ ToDo
 
 
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmeysampg%2Fintldate.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmeysampg%2Fintldate?ref=badge_large)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%mahdyar%2Fintldate.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%mahdyar%2Fintldate?ref=badge_large)

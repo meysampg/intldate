@@ -6,14 +6,16 @@
  * @category Traits
  *
  * @author   meysampg <p.g.meysam@gmail.com>
- * @license  https://github.com/meysampg/intldate/blob/master/LICENSE MIT
+ * @author   mahdyar <hi@mahdyar.me>
+ * 
+ * @license  https://github.com/mahdyar/intldate/blob/master/LICENSE MIT
  *
  * @version  1.1
  *
- * @link     https://github.com/meysampg/intldate
+ * @link     https://github.com/mahdyar/intldate
  */
 
-namespace meysampg\intldate;
+namespace mahdyar\intldate;
 
 use Exception;
 use IntlCalendar;
